@@ -1,0 +1,129 @@
+
+<!-- Css -->
+<style>
+    .chat-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #007bff;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: all 2s ease-in-out;
+    }
+    
+    .chat-box { 
+        overflow: auto;
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 400px;
+        height: 400px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        display: none;
+        transition: all 2s ease-in-out;
+        border-radius: 1em;
+    }
+
+    .chat-box .header-chat-box {
+        margin: 12px;
+    } 
+    
+    .chat-box .header-chat-box .title {
+        font-size: 14px;
+    }
+
+    .chat-open {
+        display: block;
+    }
+    
+    .line {
+        display: flex;
+        height: 1.5px;
+        width: 100%;
+        background: black;
+        border-radius: 2px;
+    }
+
+    .chat-input {
+        display: flex;
+        margin-top: 8rem;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .chat-input .chat-input-user {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 90%;
+    }
+
+    .chat-input .chat-input-user-confirm {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 10%;
+    }
+      
+    .chat-response {
+        padding: 10px;
+        background-color: #f1f1f1;
+        margin-bottom: 10px;
+    }
+    
+    .chat-user {
+        padding: 10px;
+        background-color: #e2e2e2;
+        margin-bottom: 10px;
+        text-align: right;
+    }
+
+
+</style>
+
+<!-- Html da bolha e do chat-->
+<div id="chatButton" class="chat-button">
+    <i class="fas fa-comment">Chat</i>
+</div>
+    
+<div id="chatBox" class="chat-box">
+    <div class="header-chat-box">
+        <h3>Chat Auto Atendimento</h3>
+    </div>
+    <div class="line"></div>
+
+    <div class="chat-response">
+        <p>Olá! Em que posso ajudar?</p>
+    </div>
+
+    <div class="chat-user">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum pariatur cum in molestias aliquid distinctio veniam odio porro harum optio itaque, facere impedit debitis nulla laboriosam tempora illo totam exercitationem?
+    </div>
+    
+    <div class="chat-input">
+        <input type="text" id="userInput" class="chat-input-user" id="duvida" placeholder="Digite sua duvida">
+        <button type="submit" class="chat-input-user-confirm">></button>
+    </div>
+</div>
+
+<!-- Javascript abrir e fechar a box -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("#chatButton").click(function() {
+          $("#chatBox").toggleClass("chat-open");
+        });
+    });
+</script>
