@@ -9,5 +9,8 @@ urlpatterns = [
     path('user/registro', views.userRegister, name = 'registro_usuario'),
     path('user/login', views.userLogin, name = 'login_usuario'),
     path('user/logout', views.logout, name='logout'),
-    path('admin', admin.site.urls)
+    path('admin', admin.site.urls),
+
+    path('reset-chat', views.resetarChat, name='resetarChat'),
+    path('chat/response', views.chatBot, name='chatBot')
 ]
